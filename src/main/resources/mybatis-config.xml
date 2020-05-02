@@ -19,5 +19,6 @@
     </environments>
     <mappers>
         <mapper resource="mybits/Category.xml"/>
+<!--        resource代表的是xml形式的映射 class代表的是注解形式的映射-->
     </mappers>
 </configuration>

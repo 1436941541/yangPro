@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.demo.mapper.Category">
-    <resultMap type="Category" id="categoryBean">
+    <resultMap id="categoryBean" type="Category">
         <id column="cid" property="id" />
         <result column="cname" property="name" />
 
@@ -21,4 +21,11 @@
     <select id="listCategory" resultMap="categoryBean">
             select c.*, p.*, c.id 'cid', p.id 'pid', c.name 'cname', p.name 'pname' from category_ c left join product_ p on c.id = p.cid
         </select>
+
+    <select id="listProduct" resultType="Product">
+        select * from product_
+        <if test="nae!=null">
+            where name = 'product a'
+        </if>
+    </select>
 </mapper>
